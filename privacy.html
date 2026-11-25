@@ -11,6 +11,11 @@ body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.7 -apple
 main { max-width: 680px; margin: 0 auto; padding: 40px 16px 64px; }
 h1 { font-size: 24px; margin: 0 0 4px; } h2 { font-size: 18px; margin: 32px 0 8px; }
 .muted { color: var(--muted); font-size: 14px; } hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+p { text-wrap: pretty; }
+:lang(ko) { word-break: keep-all; }
+:lang(en), :lang(ja), :lang(zh-Hant) { word-break: normal; }
+.id { overflow-wrap: anywhere; }
+.keep { white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -19,14 +24,29 @@ h1 { font-size: 24px; margin: 0 0 4px; } h2 { font-size: 18px; margin: 32px 0 8p
 <p class="muted">몽돌: 오늘의 탑 쌓기 | 시행일 2026년 11월 28일</p>
 
 <h2>수집하는 정보</h2>
-<p>몽돌에는 회원가입과 로그인이 없고, <b>어떤 정보도 개발자나 서버로 보내지 않습니다</b>. 게임은 인터넷 연결 없이도 동작합니다. 프로필 아이디와 프로필 이미지도 이 기기 안에만 저장됩니다.</p>
-<p>기기 식별자, 위치, 연락처, 사진을 수집하지 않으며, 다른 회사의 앱이나 웹사이트와 연결해 추적하지 않습니다.</p>
+<p>몽돌에는 자체 회원가입이 없습니다. 게임은 인터넷 연결 없이도 할 수 있고, Game Center에 로그인하지 않아도 플레이할 수 있습니다. 프로필 아이디와 프로필 이미지는 이 기기 안에만 저장됩니다.</p>
+<p>개발자는 기기 식별자, 위치, 연락처, 사진을 수집하지 않습니다. 광고가 없고, 다른 회사의 앱이나 웹사이트와 연결해 추적하지 않습니다.</p>
 
 <h2>기기 안에 저장되는 정보</h2>
 <p>최고 기록, 소원 문구, 오늘의 몽돌 결과, 설정(언어, 소리, 테마, 난이도)은 이 기기 안에만 저장됩니다. 개발자에게는 전송되지 않습니다. 기기를 바꿔도 기록을 되살릴 수 있도록, iPhone에서는 사용자 본인의 iCloud 계정에, Android에서는 사용자 본인의 Google 계정 자동 백업에 보관됩니다. 이 백업은 개발자가 볼 수 없습니다. PC(Steam) 1.0은 그 컴퓨터 안에만 둡니다.</p>
 
+<h2>Game Center</h2>
+<p>iPhone의 Game Center 순위는 기본이 꺼져 있습니다. 설정에서 켜고 Apple Game Center에 로그인한 뒤에만, 오늘의 몽돌 점수와 자유 플레이 최고 레벨을 Apple 리더보드에 올립니다. 리더보드 아이디는 <span class="id">com.uujeong94.mongdol.daily</span>와 <span class="id">com.uujeong94.mongdol.bestlevel</span>입니다.</p>
+<p>이때 Apple이 처리하는 정보는 Game Center 플레이어 식별자(사용자 ID)와 점수(게임 플레이 내용)입니다. 목적은 앱 기능인 순위를 보여 주는 것뿐입니다. 추적이나 광고에는 쓰지 않습니다. 개발자는 이 정보를 받지 않고, 이 순위를 위해 개발자 서버를 두지 않습니다. 처리는 Apple의 개인정보 처리방침을 따릅니다.</p>
+
+<h2>매일 알림</h2>
+<p>iPhone에서는 매일 알림을 켤 수 있습니다. 알림은 이 기기 안에서만 예약되고, 밖으로 보내지 않습니다. 기본은 꺼져 있고, 설정에서 끌 수 있습니다. 이미 그날에 플레이했다면 그날의 알림은 예약하지 않습니다.</p>
+
 <h2>사진 보관함</h2>
 <p>기록 카드를 사진으로 저장할 때만 사진 보관함에 이미지를 추가합니다. 사진을 읽지는 않습니다.</p>
+<p>iPhone에서는 마지막 장면 영상을 저장할 때도 같습니다. 권한은 사진을 추가하는 권한뿐이고, 저장을 눌렀을 때만 사진 앱에 넣습니다. 영상은 이 기기 안에서 만들며, 서버로 보내지 않습니다.</p>
+
+<h2>홈 화면 위젯</h2>
+<p>iPhone 홈 화면 위젯은 오늘의 몽돌 상태를 이 기기 안에서 보여 줍니다. 앱과 위젯은 앱 그룹 <span class="id">group.com.uujeong94.mongdol</span>에 둔 데이터만 나누어 씁니다. 그 데이터는 밖으로 보내지 않습니다.</p>
+
+<h2>구매</h2>
+<p>몽돌 프로는 iPhone의 앱 내 구입입니다. 한 번 구매하며, 구독이 아닙니다. 결제와 환불은 Apple이 처리하고, 개발자는 결제 정보, 이름, 이메일을 받지 않습니다.</p>
+<p>이 기기의 Apple 계정이 몽돌 프로를 가지고 있는지는 Apple의 StoreKit이 이 기기 안에서 확인합니다. 구매 복원으로 다시 확인할 수 있습니다.</p>
 
 <h2>공유</h2>
 <p>결과를 공유하면 iOS 공유 화면을 통해 사용자가 고른 앱으로 텍스트와 이미지가 전달됩니다. 이후 처리는 그 앱의 정책을 따릅니다.</p>
@@ -35,7 +55,7 @@ h1 { font-size: 24px; margin: 0 0 4px; } h2 { font-size: 18px; margin: 32px 0 8p
 <p>몽돌은 이름, 연락처, 위치를 묻지 않습니다.</p>
 
 <h2>변경</h2>
-<p>앞으로 온라인 랭킹처럼 서버를 쓰는 기능을 넣으면, 그 전에 이 방침을 고쳐 이 페이지에 시행일과 함께 게시합니다.</p>
+<p>이 방침을 고치면, 적용하기 전에 이 페이지에 시행일과 함께 게시합니다.</p>
 
 <h2>문의 메일</h2>
 <p>문의 메일을 보내 주시면, 메일 주소와 내용은 답장하는 데만 씁니다. 앱이 메일 주소를 따로 모으지 않습니다.</p>
@@ -49,22 +69,103 @@ h1 { font-size: 24px; margin: 0 0 4px; } h2 { font-size: 18px; margin: 32px 0 8p
 <p class="muted" lang="en">Mongdol: Daily Tower Stack | Effective November 28, 2026</p>
 <div lang="en">
 <h2>Information we collect</h2>
-<p>Mongdol has no account or sign-in, and <b>sends no information to the developer or to any server</b>. The game works without an internet connection. Your profile ID and avatar are stored only on this device.</p>
-<p>We do not collect device identifiers, location, contacts or photos, and we do not track you across other companies' apps or websites.</p>
+<p>Mongdol has no account of its own. The game works without an internet connection, and you can play without signing in to Game Center. Your profile ID and avatar are stored only on this device.</p>
+<p>We do not collect device identifiers, location, contacts or photos. There are no ads, and we do not track you across other companies' apps or websites.</p>
 <h2>Information stored on your device</h2>
 <p>Your best records, wish text, Daily results and settings (language, sound, theme, difficulty) are stored on this device and are never sent to the developer. So you can restore them on a new device, iPhone keeps a copy in your own iCloud account and Android keeps a copy in your own Google account auto backup. The developer cannot access either copy. The PC (Steam) 1.0 build keeps records only on that computer.</p>
+<h2>Game Center</h2>
+<p>On iPhone, Game Center leaderboards stay off until you turn them on. Only after you turn them on and sign in to Apple Game Center does the app submit your Daily score and your free-play best level to Apple's leaderboards. The leaderboard IDs are <span class="id">com.uujeong94.mongdol.daily</span> and <span class="id">com.uujeong94.mongdol.bestlevel</span>.</p>
+<p>Apple processes your Game Center player identifier (a user ID) and your scores (gameplay content). The purpose is app functionality only, which is showing those leaderboards. This is not used for tracking or ads. The developer does not receive this information and does not run a server for these leaderboards. Apple handles it under Apple's privacy policy.</p>
+<h2>Daily reminders</h2>
+<p>On iPhone you can turn on a daily reminder. It is scheduled only on this device, and nothing is sent anywhere. It stays off until you turn it on, and you can turn it off in Settings. If you have already played that day, that day's reminder is not scheduled.</p>
 <h2>Photos</h2>
 <p>The app adds an image to your photo library only when you choose to save a record card. It does not read your photos.</p>
+<p>On iPhone, saving the last moments as a video works the same way. The permission is add-only. The video is written to the Photos app only when you tap save. It is made on this device, and it is not uploaded.</p>
+<h2>Home Screen widget</h2>
+<p>The iPhone Home Screen widget shows today's Daily with data that stays on this device. The app and the widget share that data through the app group <span class="id">group.com.uujeong94.mongdol</span>. It is not sent anywhere.</p>
+<h2>Purchases</h2>
+<p>Mongdol Pro is an in-app purchase on iPhone. You buy it once, and it is not a subscription. Apple handles payment and refunds. The developer does not receive your payment details, name or email.</p>
+<p>Apple's StoreKit checks on this device whether the Apple account on this device owns Mongdol Pro. You can restore the purchase.</p>
 <h2>Sharing</h2>
 <p>When you share a result, the text and image go through the iOS share sheet to the app you choose, under that app's own policy.</p>
 <h2>Children</h2>
 <p>Mongdol never asks for a name, contact details or location.</p>
 <h2>Changes</h2>
-<p>If we add features that use a server, such as an online ranking, we will update this policy first and post it on this page with its effective date.</p>
+<p>If this policy changes, we will post the update on this page with its effective date before the change applies.</p>
 <h2>Emails to us</h2>
 <p>If you email us, your address and message are used only to reply. The app does not collect your email address.</p>
 <h2>Contact</h2>
 <p>Email: <a href="mailto:moneoneapp@gmail.com">moneoneapp@gmail.com</a></p>
+</div>
+
+<hr>
+
+<h1 lang="ja">プライバシーポリシー</h1>
+<p class="muted" lang="ja">Mongdol：きょうの石積み | 施行日 2026年11月28日</p>
+<div lang="ja">
+<h2>収集する情報</h2>
+<p>Mongdolに独自の会員登録はありません。ゲームはインターネットがなくても遊べ、Game Centerにサインインしなくてもプレイできます。プロフィールIDとプロフィール画像は、この端末の中だけに保存されます。</p>
+<p>開発者は端末識別子、位置情報、連絡先、写真を収集しません。広告はなく、他社のアプリやウェブサイトと結びつけて追跡することも<span class="keep">ありません。</span></p>
+<h2>端末の中に保存される情報</h2>
+<p>最高記録、願いごとの文、デイリーの結果、設定（言語、音、テーマ、難易度）は、この端末の中だけに保存され、開発者には送られません。端末を替えても戻せるよう、iPhoneではご自身のiCloudアカウントに、Androidではご自身のGoogleアカウントの自動バックアップに保管されます。開発者はこのバックアップを見ることはできません。PC（Steam）1.0は、そのコンピュータの中だけに残します。</p>
+<h2>Game Center</h2>
+<p>iPhoneのGame Centerランキングは、初期状態ではオフです。設定でオンにし、AppleのGame Centerにサインインしたあとだけ、デイリーの得点とフリープレイの最高レベルをAppleのリーダーボードへ送ります。リーダーボードIDは <span class="id">com.uujeong94.mongdol.daily</span> と <span class="id">com.uujeong94.mongdol.bestlevel</span> です。</p>
+<p>このときAppleが扱う情報は、Game Centerのプレイヤー識別子（ユーザーID）と得点（ゲームプレイの内容）です。目的はアプリの機能として順位を表示することだけです。追跡や広告には使いません。開発者はこの情報を受け取らず、この順位のために開発者のサーバーは置きません。取扱いはAppleのプライバシーポリシーに従います。</p>
+<h2>毎日のお知らせ</h2>
+<p>iPhoneでは、毎日のお知らせをオンにできます。お知らせはこの端末の中だけで予約され、外には送られません。初期状態はオフで、設定からオフに戻せます。その日にもうプレイしていれば、その日のお知らせは予約しません。</p>
+<h2>写真</h2>
+<p>記録カードを写真として保存するときだけ、写真ライブラリに画像を追加します。写真を読み取ることはありません。</p>
+<p>iPhoneで最後のシーンを動画として保存するときも同じです。権限は写真の追加だけで、保存を押したときだけ写真アプリに入れます。動画はこの端末の中で作り、サーバーへは<span class="keep">送りません。</span></p>
+<h2>ホーム画面ウィジェット</h2>
+<p>iPhoneのホーム画面ウィジェットは、今日のデイリーの状態をこの端末の中だけで表示します。アプリとウィジェットは、アプリグループ <span class="id">group.com.uujeong94.mongdol</span> に置いたデータだけを分け合います。そのデータは外へ<span class="keep">送りません。</span></p>
+<h2>購入</h2>
+<p>Mongdol プロは、iPhoneのアプリ内購入です。一度買うもので、サブスクリプションではありません。支払いと返金はAppleが行い、開発者は支払い情報、名前、メールを<span class="keep">受け取りません。</span></p>
+<p>この端末のAppleアカウントがMongdol プロを持っているかは、AppleのStoreKitがこの端末の中で確認します。購入の復元で、もう一度確認できます。</p>
+<h2>共有</h2>
+<p>結果を共有すると、iOSの共有シートから、選んだアプリへ文字と画像が渡されます。その後の扱いは、そのアプリの方針に従います。</p>
+<h2>子ども</h2>
+<p>Mongdolは名前、連絡先、位置情報を<span class="keep">聞きません。</span></p>
+<h2>変更</h2>
+<p>この方針を改めるときは、適用する前に、このページへ施行日と一緒に掲載します。</p>
+<h2>問い合わせメール</h2>
+<p>お問い合わせメールをいただくと、メールアドレスと内容は返信にだけ使います。アプリがメールアドレスを別に集めることはありません。</p>
+<h2>問い合わせ</h2>
+<p>問い合わせメール: <a href="mailto:moneoneapp@gmail.com">moneoneapp@gmail.com</a></p>
+</div>
+
+<hr>
+
+<h1 lang="zh-Hant">隱私權政策</h1>
+<p class="muted" lang="zh-Hant">Mongdol：每日疊石塔 | 生效日 2026年11月28日</p>
+<div lang="zh-Hant">
+<h2>收集的資訊</h2>
+<p>Mongdol 沒有自己的會員註冊。遊戲沒有網路也能玩，不登入 Game Center 也能玩。個人資料 ID 和個人資料圖片只存在這台裝置裡。</p>
+<p>開發者不收集裝置識別碼、位置、聯絡人或照片。沒有廣告，也不會把你和其他公司的 App 或網站串起來追蹤。</p>
+<h2>存在裝置裡的資訊</h2>
+<p>最高紀錄、願望文字、每日挑戰的結果，以及設定（語言、聲音、主題、難度）只存在這台裝置上，不會傳給開發者。為了換機後能找回紀錄，iPhone 會存在你自己的 iCloud 帳號，Android 會存在你自己的 Google 帳號自動備份。開發者看不到這些備份。PC（Steam）1.0 只留在<span class="keep">那台電腦裡。</span></p>
+<h2>Game Center</h2>
+<p>iPhone 的 Game Center 排行榜預設是關閉的。只有在設定裡打開，並登入 Apple Game Center 之後，才會把每日挑戰的分數和自由遊玩的最高等級送到 Apple 的排行榜。排行榜 ID 是 <span class="id">com.uujeong94.mongdol.daily</span> 和 <span class="id">com.uujeong94.mongdol.bestlevel</span>。</p>
+<p>這時由 Apple 處理的資訊，是 Game Center 玩家識別碼（使用者 ID）和分數（遊戲內容）。目的只是 App 功能，用來顯示排行榜。不用於追蹤或廣告。開發者收不到這些資訊，也不為這個排行榜架設開發者的伺服器。處理方式依 Apple 的隱私權政策。</p>
+<h2>每日提醒</h2>
+<p>在 iPhone 上可以打開每日提醒。提醒只在這台裝置裡排程，不會外送。預設是關閉的，也可以在設定裡關掉。如果那天已經玩過，就不會排那天的提醒。</p>
+<h2>照片</h2>
+<p>只有在你把紀錄卡存成照片時，才會把圖片加進照片圖庫。不會讀取你的照片。</p>
+<p>在 iPhone 上把最後的畫面存成影片時也一樣。權限只有加入照片。只有在你按下儲存時，才放進「照片」App。影片在這台裝置裡製作，<span class="keep">不會上傳。</span></p>
+<h2>主畫面小工具</h2>
+<p>iPhone 主畫面小工具只在這台裝置上顯示今天的每日挑戰。App 和小工具只共用放在 App 群組 <span class="id">group.com.uujeong94.mongdol</span> 裡的資料。那些資料不會外送。</p>
+<h2>購買</h2>
+<p>Mongdol 專業版是 iPhone 的 App 內購買。買一次即可，不是訂閱。付款和退款由 Apple 處理，開發者收不到付款資訊、姓名或電子郵件。</p>
+<p>這台裝置上的 Apple 帳號是否擁有 Mongdol 專業版，由 Apple 的 StoreKit 在這台裝置上確認。也可以用恢復購買再確認一次。</p>
+<h2>分享</h2>
+<p>分享結果時，文字和圖片會經由 iOS 的分享畫面，傳到你選擇的 App。之後如何處理，依該 App 的政策。</p>
+<h2>兒童</h2>
+<p>Mongdol 不會詢問姓名、聯絡方式或位置。</p>
+<h2>變更</h2>
+<p>若這份政策有修改，會在生效前把更新和生效日一起刊登在這個頁面。</p>
+<h2>來信</h2>
+<p>如果你寫信來，郵件地址和內容只用來回信。App 不會另外蒐集郵件地址。</p>
+<h2>聯絡</h2>
+<p>聯絡信箱: <a href="mailto:moneoneapp@gmail.com">moneoneapp@gmail.com</a></p>
 </div>
 </main>
 </body>
